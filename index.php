@@ -11,13 +11,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
  
-$sql = "SELECT firstname, lastname FROM emp";
+$sql = "SELECT name, quantity FROM dessert";
 $result = $conn->query($sql);
  
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    echo " - Name: " . $row["name"]. " " . $row["quantity"]. "<br>";
   }
 } else {
   echo "0 results";
